@@ -16,14 +16,12 @@ $data = $_SESSION['registration_data'] ?? null;
 
     <?php include('header.php'); ?>
 
-    <!-- HERO BANNER WITH thank_you_bg.jpg -->
     <header class="thankyou-hero">
         <div class="hero-text">
             <h1>Thank You!</h1>
         </div>
     </header>
 
-    <!-- THANK YOU CONTENT CONTAINER -->
     <section class="thankyou-section">
 
         <?php if ($data): ?>

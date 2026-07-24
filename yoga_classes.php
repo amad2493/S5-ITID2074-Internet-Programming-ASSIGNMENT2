@@ -18,7 +18,6 @@
         Serenity Yoga Centre offers a variety of yoga programs designed for different fitness levels and personal goals.
     </p>
 
-    <!-- Yoga Classes Grid -->
     <div class="class-container">
 
         <div class="class-card">
@@ -77,7 +76,6 @@
 
     </div>
 
-    <!-- Benefits Section -->
     <section>
         <h2>Benefits of Joining Our Classes</h2>
         <img src="images/benefits_icon.jpg" alt="Benefits Icon" width="150" style="margin-bottom: 15px;">

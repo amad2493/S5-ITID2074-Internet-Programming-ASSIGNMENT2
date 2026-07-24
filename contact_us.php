@@ -12,7 +12,6 @@
 
     <?php include('header.php'); ?>
 
-    <!-- HERO BANNER (Uses Section 3 of your CSS with contact_bg.jpg) -->
     <header class="contact-hero">
         <div class="hero-text">
             <h1>Contact & Registration</h1>
@@ -20,10 +19,8 @@
         </div>
     </header>
 
-    <!-- MAIN CONTENT (Uses Section 5 of your CSS) -->
     <main class="contact-content">
 
-        <!-- LEFT PANEL: Location, Hours, & Contact Details -->
         <aside class="contact-box">
             <h2>Visit Our Studio</h2>
 
@@ -61,7 +58,6 @@
             </div>
         </aside>
 
-        <!-- RIGHT PANEL: Registration Form -->
         <section class="form-box">
             <h2>Get Started with Us</h2>
             <p style="text-align: center; color: #666; margin-bottom: 25px;">Fill out the form below to register for a class, sign up for a membership, or send us an inquiry.</p>
@@ -83,7 +79,6 @@
                     <input type="tel" id="phone" name="phone" placeholder="e.g. 0123456789" required>
                 </div>
 
-                <!-- Dropdown 1: Preferred Yoga Class -->
                 <div>
                     <label for="classSelect">Preferred Yoga Class (Optional)</label>
                     <select id="classSelect" name="classSelect">
@@ -97,7 +92,6 @@
                     </select>
                 </div>
 
-                <!-- Dropdown 2: Membership Plan -->
                 <div>
                     <label for="membershipSelect">Membership Plan (Optional)</label>
                     <select id="membershipSelect" name="membershipSelect">

@@ -1,24 +1,13 @@
-/**
- * Serenity Yoga Centre - JavaScript Core Library
- * Handles Form Validation, Interactive Quiz, Membership Toggle,
- * Dynamic URL Parameter Auto-Selection, and Blog Functionality.
- */
-
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Attach Event Listener for Form Validation on contact_us.php
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', validateContactForm);
     }
 
-    // 2. Handle Dynamic URL Parameter Pre-selection on contact_us.php
     autoSelectFormOptions();
 });
 
-/**
- * Auto-selects options in 'classSelect' or 'membershipSelect'
- * based on URL query parameters (?class= or ?plan=)
- */
+// Pre-selects options in classSelect / membershipSelect from ?class= or ?plan= URL params
 function autoSelectFormOptions() {
     const urlParams = new URLSearchParams(window.location.search);
     const selectedClass = urlParams.get('class');
@@ -27,7 +16,6 @@ function autoSelectFormOptions() {
     const classSelect = document.getElementById('classSelect');
     const membershipSelect = document.getElementById('membershipSelect');
 
-    // Pre-select Yoga Class dropdown if ?class= is passed
     if (classSelect && selectedClass) {
         const queryVal = selectedClass.toLowerCase();
         for (let option of classSelect.options) {
@@ -38,7 +26,6 @@ function autoSelectFormOptions() {
         }
     }
 
-    // Pre-select Membership dropdown if ?plan= is passed
     if (membershipSelect && selectedPlan) {
         const queryVal = selectedPlan.toLowerCase();
         for (let option of membershipSelect.options) {
@@ -50,9 +37,6 @@ function autoSelectFormOptions() {
     }
 }
 
-/**
- * Client-Side Form Validation (Contact Form)
- */
 function validateContactForm(event) {
     const nameInput = document.getElementById('fullName');
     const emailInput = document.getElementById('email');
@@ -61,7 +45,6 @@ function validateContactForm(event) {
     let isValid = true;
     let errorMessage = '';
 
-    // Full Name Validation (Letters and spaces only, min 3 chars)
     const nameRegex = /^[a-zA-Z\s]{3,}$/;
     if (nameInput && !nameRegex.test(nameInput.value.trim())) {
         errorMessage +=
@@ -69,7 +52,6 @@ function validateContactForm(event) {
         isValid = false;
     }
 
-    // Email Validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (emailInput && !emailRegex.test(emailInput.value.trim())) {
         errorMessage +=
@@ -77,7 +59,7 @@ function validateContactForm(event) {
         isValid = false;
     }
 
-    // Malaysian Phone Validation (+60 or 01x)
+    // Accepts Malaysian numbers in +60 or 01x format
     const phoneRegex = /^(\+?60|0)1[0-9]{8,9}$/;
     if (
         phoneInput &&
@@ -88,16 +70,12 @@ function validateContactForm(event) {
         isValid = false;
     }
 
-    // Stop submission if validation fails
     if (!isValid) {
         event.preventDefault();
         alert('Form Submission Errors:\n\n' + errorMessage);
     }
 }
 
-/**
- * Yoga Recommendation Quiz Logic
- */
 function calculateQuizResult() {
     const goal = document.getElementById('goal').value;
     const experience = document.getElementById('experience').value;
@@ -148,9 +126,6 @@ function calculateQuizResult() {
     if (resultDiv) resultDiv.style.display = 'block';
 }
 
-/**
- * Membership Pricing Toggle
- */
 function toggleBilling(type) {
     const priceBasic = document.getElementById('priceBasic');
     const priceUnlimited = document.getElementById('priceUnlimited');
@@ -176,9 +151,6 @@ function toggleBilling(type) {
     }
 }
 
-/**
- * Wellness Blog Filter
- */
 function filterBlog(category) {
     const posts = document.querySelectorAll('.blog-post');
 
@@ -194,9 +166,6 @@ function filterBlog(category) {
     });
 }
 
-/**
- * Dynamic Comment Addition on Blog Detail Page
- */
 function addComment(event) {
     event.preventDefault();
     const nameInput = document.getElementById('commenterName');
@@ -216,9 +185,7 @@ function addComment(event) {
     if (commentForm) commentForm.reset();
 }
 
-/**
- * XSS Prevention Helper Function
- */
+// Escapes HTML special characters to prevent XSS when inserting user input
 function escapeHTML(str) {
     return str.replace(
         /[&<>'"]/g,

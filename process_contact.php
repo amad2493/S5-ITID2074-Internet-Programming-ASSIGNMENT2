@@ -1,23 +1,15 @@
 <?php
 
-/**
- * Server-Side Form Processor
- * Sanitizes and securely displays registration details.
- */
-
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Sanitize user inputs against XSS and injection
     $fullName         = isset($_POST['fullName']) ? htmlspecialchars(trim($_POST['fullName']), ENT_QUOTES, 'UTF-8') : '';
     $email            = isset($_POST['email']) ? htmlspecialchars(trim($_POST['email']), ENT_QUOTES, 'UTF-8') : '';
     $phone            = isset($_POST['phone']) ? htmlspecialchars(trim($_POST['phone']), ENT_QUOTES, 'UTF-8') : '';
 
-    // Separate handling for Preferred Class and Membership Tier
     $classSelect      = (!empty($_POST['classSelect'])) ? htmlspecialchars(trim($_POST['classSelect']), ENT_QUOTES, 'UTF-8') : 'None Selected';
     $membershipSelect = (!empty($_POST['membershipSelect'])) ? htmlspecialchars(trim($_POST['membershipSelect']), ENT_QUOTES, 'UTF-8') : 'None Selected';
 
     $message          = isset($_POST['message']) ? htmlspecialchars(trim($_POST['message']), ENT_QUOTES, 'UTF-8') : '';
 } else {
-    // Redirect back to contact form if accessed directly
     header("Location: contact_us.php");
     exit();
 }
@@ -36,18 +28,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     <?php include('header.php'); ?>
 
-    <!-- HERO BANNER WITH thank_you_bg.jpg -->
     <header class="thankyou-hero">
         <div class="hero-text">
             <h1>Registration Successful!</h1>
         </div>
     </header>
 
-    <!-- MAIN SUMMARY CARD -->
     <main class="thankyou-section">
         <p>Thank you, <strong><?php echo $fullName; ?></strong>. We have received your submission and will get in touch shortly.</p>
 
-        <!-- Summary Box -->
         <div style="background-color: #f4f7f5; padding: 25px; border-radius: 12px; text-align: left; margin: 25px 0; line-height: 1.8;">
             <p><strong>Full Name:</strong> <?php echo $fullName; ?></p>
             <p><strong>Email Address:</strong> <?php echo $email; ?></p>

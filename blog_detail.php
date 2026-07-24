@@ -1,8 +1,6 @@
 <?php
-// Read the article ID from URL parameter safely
 $id = isset($_GET['id']) ? $_GET['id'] : '1';
 
-// Basic conditional rendering based on selected article
 if ($id === '2') {
     $title = "Post-Yoga Nutrition Guide";
     $category = "Nutrition";
@@ -12,7 +10,6 @@ if ($id === '2') {
     $category = "Mindfulness";
     $content = "Mind wandering during meditation is completely natural. Rather than fighting your thoughts, gently acknowledge them without judgment and bring your awareness back to your anchor point—your breath.";
 } else {
-    // Default to Article 1
     $title = "5 Morning Breathing Exercises";
     $category = "Mindfulness";
     $content = "Pranayama is the practice of breath control in yoga. Practicing morning breathing exercises like Nadi Shodhana or Kapalabhati boosts blood oxygenation, clears morning brain fog, and sets a calm tone for the day.";
