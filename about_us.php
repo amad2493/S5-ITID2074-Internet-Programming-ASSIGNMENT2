@@ -50,57 +50,6 @@
             line-height: 1.5;
             text-align: left;
         }
-
-        .instructors-section {
-            margin: 40px auto;
-            max-width: 1100px;
-            padding: 0 20px;
-        }
-
-        .instructor-grid {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-
-        .instructor-card {
-            background-color: #f9f9f9;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 20px;
-            width: 280px;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        }
-
-        .instructor-card img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 15px;
-            border: 3px solid #355e3b;
-        }
-
-        .instructor-card h3 {
-            margin: 10px 0 5px 0;
-            color: #355e3b;
-        }
-
-        .instructor-card .role {
-            font-weight: bold;
-            color: #666;
-            font-size: 0.9em;
-            margin-bottom: 10px;
-        }
-
-        .instructor-card p {
-            font-size: 0.9em;
-            color: #444;
-            line-height: 1.4;
-        }
     </style>
 </head>
 
@@ -133,34 +82,6 @@
             <p>We aim to become one of the leading yoga and wellness centres in Malaysia by providing accessible, high-quality yoga programs that promote healthy living and personal growth.</p>
         </div>
     </div>
-
-    <section class="instructors-section">
-        <h2 style="color: #355e3b;">Meet Our Instructors</h2>
-        <p style="text-align: center; color: #555;">Our certified and passionate team is here to guide your wellness journey.</p>
-
-        <div class="instructor-grid">
-            <div class="instructor-card">
-                <img src="images/aisharahman.jpg" alt="Aisha Rahman" />
-                <h3>Aisha Rahman</h3>
-                <div class="role">Lead Hatha & Vinyasa Instructor</div>
-                <p>With over 8 years of experience, Aisha specializes in alignment-based flow and mindful breathing techniques.</p>
-            </div>
-
-            <div class="instructor-card">
-                <img src="images/davidtan.jpg" alt="David Tan" />
-                <h3>David Tan</h3>
-                <div class="role">Yin Yoga & Meditation Specialist</div>
-                <p>David focuses on restorative practices, stress relief, and deep tissue relaxation for all fitness levels.</p>
-            </div>
-
-            <div class="instructor-card">
-                <img src="images/mayalin.jpg" alt="Maya Lin" />
-                <h3>Maya Lin</h3>
-                <div class="role">Power Yoga & Fitness Coach</div>
-                <p>Maya brings dynamic energy to build core strength, flexibility, and physical stamina in every session.</p>
-            </div>
-        </div>
-    </section>
 
 </body>
 
